@@ -4,7 +4,7 @@ import inspect
 import importlib
 import random
 import pandas as pd
-
+import csv
 #---->
 from MyOptimizer import create_optimizer
 from MyLoss import create_loss
@@ -85,7 +85,6 @@ class  ModelInterface(pl.LightningModule):
 
         #---->loss
         loss = self.loss(logits, label)
-
         #---->acc log
         Y_hat = int(Y_hat)
         Y = int(label)
@@ -129,6 +128,7 @@ class  ModelInterface(pl.LightningModule):
         
         #---->
         self.log('val_loss', cross_entropy_torch(logits, target), prog_bar=True, on_epoch=True, logger=True)
+
         self.log('auc', self.AUROC(probs, target.squeeze()), prog_bar=True, on_epoch=True, logger=True)
         self.log_dict(self.valid_metrics(max_probs.squeeze() , target.squeeze()),
                           on_epoch = True, logger = True)
