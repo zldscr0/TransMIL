@@ -35,7 +35,7 @@ CUDA_VISIBLE_DEVICES=0,1 python extract_features_fp.py --data_h5_dir DIR_TO_COOR
 
 `label_dir`：存带标签信息（已经划分好训练集、测试集和验证集）的`.csv`文件的目录，`.csv`的文件示例参照代码库中的`dataset_csv/final.csv`
 
-![image-20230926084626349](C:\Users\hanabi\AppData\Roaming\Typora\typora-user-images\image-20230926084626349.png)
+![image-20230926084626349](https://github.com/zldscr0/TransMIL/blob/main/docs/yaml.png)
 
 2.修改`TransMIL.yaml`中的其他相关超参数开始运行。
 
@@ -47,13 +47,13 @@ python train.py --stage='train' --config='TransMIL.yaml'  --gpus=0 --fold=0
 
 ##### 训练过程截图
 
-![image-20230926091511801](C:\Users\hanabi\AppData\Roaming\Typora\typora-user-images\image-20230926091511801.png)
+![image-20230926091511801](https://github.com/zldscr0/TransMIL/blob/main/docs/train.png)
 
 ##### 最优模型
 
 自动保存在`logs/`下，训练过程中验证集的结果存在`metrics.csv`中
 
-![image-20230926091621266](C:\Users\hanabi\AppData\Roaming\Typora\typora-user-images\image-20230926091621266.png)
+![image-20230926091621266](https://github.com/zldscr0/TransMIL/blob/main/docs/log.png)
 
 #### test
 
@@ -67,8 +67,8 @@ python train.py --stage='test' --config='TransMIL.yaml'  --gpus=0 --fold=0
 
 > logs/fold0/result.csv
 
-![image-20230925090413156](C:\Users\hanabi\AppData\Roaming\Typora\typora-user-images\image-20230925090413156.png)
+![image-20230925090413156](https://github.com/zldscr0/TransMIL/blob/main/docs/test.png)
 
 #### Loss图
 
-![image-20230926092242051](C:\Users\hanabi\AppData\Roaming\Typora\typora-user-images\image-20230926092242051.png)
+![image-20230926092242051](https://github.com/zldscr0/TransMIL/blob/main/docs/loss.png)
