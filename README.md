@@ -1,7 +1,5 @@
 ### README
 
-[TOC]
-
 #### 环境配置
 
 参照https://github.com/zldscr0/WSI-FT中p39环境的配置，其他依赖项通过执行下面的指令安装。
